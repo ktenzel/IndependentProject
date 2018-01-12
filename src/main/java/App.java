@@ -12,15 +12,6 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-
-        get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            ArrayList<Event> events = Event.getAll();
-            model.put("events", events);
-
-            return new ModelAndView(model, "index.hbs");
-        }, new HandlebarsTemplateEngine());
-
         post("/events/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String content = request.queryParams("content");
@@ -31,5 +22,16 @@ public class App {
             model.put("description", newEvent);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
+
+
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Event> events = Event.getAll();
+            model.put("events", events);
+
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
     }
 }
