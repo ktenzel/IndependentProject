@@ -8,9 +8,6 @@ import java.security.PublicKey;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Guest on 1/12/18.
- */
 public class EventTest {
     @Before
     public void setUp() throws Exception {
