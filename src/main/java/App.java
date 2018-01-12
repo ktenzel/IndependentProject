@@ -12,6 +12,13 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
+
+        get("/events/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "newevent-form.hbs");
+                }, new HandlebarsTemplateEngine());
+
+
         post("/events/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String content = request.queryParams("content");
@@ -24,6 +31,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
 
+
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Event> events = Event.getAll();
@@ -32,6 +40,12 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        get("/events/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfEventToFind = Integer.parseInt(req.params("id"));
+            Event foundEvent = Event.findById(idOfEventToFind);
+            model.put("event", foundEvent);
+            return new ModelAndView(model, "event-details.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
