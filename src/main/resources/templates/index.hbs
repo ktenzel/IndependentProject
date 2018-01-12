@@ -2,9 +2,18 @@
 
 <h1>Event Item</h1>
 
+{{#if events}}
+    {{#each events}}
+    <p>Current Post</p>
+    <p>{{ content }}</p>
+    {{/each}}
+{{else}}
+<p>No scheduled event</p>
+{{/if}}
+
 <p>Add a new Event:</p>
 
-<form action="/posts/new" method="Event">
+<form action="/events/new" method="post">
     <label for="content">Event Name</label>
     <input id="content" name="content" type="text">
 
