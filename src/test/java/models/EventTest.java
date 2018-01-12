@@ -22,5 +22,10 @@ public class EventTest {
         Event event = new Event("Welcome");
         assertEquals(true, event instanceof Event);
     }
+    @Test
+    public void NewEventGetsContent() throws Exception {
+        Event event = new Event("Welcome");
+        assertEquals("Welcome", event.getContent());
+    }
 
 }
