@@ -66,4 +66,17 @@ public class EventTest {
         assertEquals(LocalDateTime.now().getDayOfWeek(), myEvent.getCreatedAt().getDayOfWeek());
     }
 
+    @Test
+    public void getId_numberEachPostStartingWith_1() throws Exception{
+        Event.clearAllPosts();
+        Event myEvent = setupNewEvent();
+        assertEquals(1, myEvent.getId());
+    }
+
+    @Test
+    public void testForSecondEventOccurance() throws Exception{
+        Event event = setupNewEvent();
+        Event secondEvent = new Event("Lunch", "time for lunch");
+        assertEquals(2, Event.findById(secondEvent.getId()).getId());
+    }
 }

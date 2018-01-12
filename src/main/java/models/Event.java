@@ -8,12 +8,14 @@ public class Event {
     private static ArrayList<Event> instances = new ArrayList<>();
     private boolean published;
     private LocalDateTime createdAt;
+    private int id;
 
     public Event (String content, String description){
     this.content = content;
     this.description = description;
     this.createdAt = LocalDateTime.now();
     instances.add(this);
+    this.id = instances.size();
     }
 
     public String getContent() {
@@ -35,5 +37,13 @@ public class Event {
     }
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public static Event findById(int id) {
+        return instances.get(id-1);
     }
 }
