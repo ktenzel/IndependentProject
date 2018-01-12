@@ -18,6 +18,7 @@ public class App {
 
         post("/events/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+            String content = request.queryParams("content");
             Event newEvent = new Event(content);
             return new ModelAndView(model, "success.hbs");
         });

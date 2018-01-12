@@ -1,19 +1,24 @@
 package models;
+import java.util.ArrayList;
 
-/**
- * Created by Guest on 1/12/18.
- */
 public class Event {
     private String content;
-
+    private static ArrayList<Event> instances = new ArrayList<>();
 
     public Event (String content){
     this.content = content;
+    instances.add(this);
     }
+
     public String getContent() {
         return content;
     }
+
     public static ArrayList<Event> getAll(){
-        return null
+        return instances;
+    }
+
+    public static void clearAllPosts(){
+        instances.clear();
     }
 }
