@@ -13,4 +13,7 @@ public class Event {
     public String getContent() {
         return content;
     }
+    public static ArrayList<Event> getAll(){
+        return null
+    }
 }
