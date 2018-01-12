@@ -11,23 +11,23 @@
     JAVA
     IntelliJ
 
-
-
-## Gameplay
-
-
 ## Specifications
 
 | Behavior        | Input           | Outcome  |
 | ------------- |:-------------:| -----:|
-| program reads value input| 1 | 1 |
-|
+| program takes input from generated home page | Event: "hacakathon" | "Hackathon" |
+| program generates unique id's for each event | Event: "hacakathon", Event "lunch" | id: 1, id: 2 |
+| program generates pages for each inputted event | Event: "hacakathon", Event "lunch" | id: 1, id: 2 |
+| program takes input and adds to description for each Team | From Portland, OR specializing it data visualization | description: Portland, OR specializing it data visualization |
 
 
 
 ## Technologies used:
 
 -JAVA
+-IntelliJ
+-Spark
+-Handelbars
 
 #### Known bugs:
 
