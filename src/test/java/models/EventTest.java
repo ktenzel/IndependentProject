@@ -23,26 +23,32 @@ public class EventTest {
 
     @Test
     public void NewEventCorrectlyCreates_true() throws Exception {
-        Event event = new Event("Welcome");
+        Event event = new Event("Welcome", "");
         assertEquals(true, event instanceof Event);
     }
     @Test
     public void NewEventGetsContent() throws Exception {
-        Event event = new Event("Welcome");
+        Event event = new Event("Welcome", "");
         assertEquals("Welcome", event.getContent());
+    }
+
+    @Test
+    public void NewEventGetDEscription() throws Exception {
+        Event event = new Event("Welcome", "");
+        assertEquals("", event.getDescription());
     }
 
 
     @Test
     public void GetsEachNewEvent_true() {
-        Event event = new Event("Welcome");
-        Event otherEvent = new Event("Lunch");
+        Event event = new Event("Welcome", "");
+        Event otherEvent = new Event("Lunch", "time for lunch");
         assertEquals(2, Event.getAll().size());
     }
     @Test
     public void EventArrayContainsAllEvents_true() {
-        Event event = new Event("Welcome");
-        Event otherEvent = new Event("Lunch");
+        Event event = new Event("Welcome", "");
+        Event otherEvent = new Event("Lunch", "time for lunch");
         assertTrue(Event.getAll().contains(event));
         assertTrue(Event.getAll().contains(otherEvent));
     }
