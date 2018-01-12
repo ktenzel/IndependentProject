@@ -13,6 +13,7 @@ public class Event {
     public Event (String content, String description){
     this.content = content;
     this.description = description;
+    this.published = false;
     this.createdAt = LocalDateTime.now();
     instances.add(this);
     this.id = instances.size();
@@ -45,5 +46,12 @@ public class Event {
 
     public static Event findById(int id) {
         return instances.get(id-1);
+    }
+    public void update(String content, String description) {
+        this.content = content;
+        this.description = description;
+    }
+    public void deleteEvent() {
+        instances.remove(id-1);
     }
 }

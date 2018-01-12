@@ -4,14 +4,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.time.LocalDateTime;
-import java.security.PublicKey;
 
 import static org.junit.Assert.*;
 
 public class EventTest {
-    public Event setupNewEvent(){
-        return new Event("Welcome", "startevent");
-    }
 
     @Before
     public void setUp() throws Exception {
@@ -79,4 +75,42 @@ public class EventTest {
         Event secondEvent = new Event("Lunch", "time for lunch");
         assertEquals(2, Event.findById(secondEvent.getId()).getId());
     }
+
+    public Event setupNewEvent(){
+        return new Event("Welcome", "start event");
+    }
+
+    @Test
+    public void updateChangesPostContent() throws Exception {
+        Event post = setupNewEvent();
+        String formerContent = post.getContent();
+        LocalDateTime formerDate = post.getCreatedAt();
+        int formerId = post.getId();
+
+        post.update("Second Event", "second description");
+
+        assertEquals(formerId, post.getId());
+        assertEquals(formerDate, post.getCreatedAt());
+        assertNotEquals(formerContent, post.getContent());
+    }
+
+
+    @Test
+    public void deleteDeletesASpecificEvents() throws Exception {
+        Event event = setupNewEvent();
+        Event otherEvent = new Event("How to pair successfully", "");
+        event.deleteEvent();
+        assertEquals(1, Event.getAll().size()); //one is left
+        assertEquals(Event.getAll().get(0).getId(), 2); //the one that was deleted has the id of 2. Why do we care?
+    }
+
+    @Test
+    public void deleteAllEvents() throws Exception {
+        Event event = setupNewEvent();
+        Event otherEvent = setupNewEvent();
+
+        Event.clearAllPosts();
+        assertEquals(0, Event.getAll().size());
+    }
+
 }
