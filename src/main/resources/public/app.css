@@ -10,14 +10,24 @@
   background-color: black;
   color: gold;
   transform:perspective(1000px) rotateX(45deg);
+  text-align: center;
     }
 
 body {
-
+  background-color: black;
+   color: gold;
     }
 
 input {
-  border: none;
+  border: gold;
   background-color: black;
   color: gold;
+}
+
+a {
+color: white;
+}
+
+.container {
+    text-align: justify;
 }

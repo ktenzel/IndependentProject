@@ -1,10 +1,12 @@
 {{#partial "content"}}
 <div class="schedule">
 <h1>Event Schedule</h1>
+    <p>Welcome : Opening Remarks and Welcome</p>
+    <p>RPG : Creating and Star Wars Role Playing Game.</p>
+    <p>Text : Creating and Star Wars Text and words based game.</p>
 
 {{#if events}}
     {{#each events}}
-    <p>Current Post</p>
 <p><span class="eventTitle">{{ content }}</span> :  {{ description }} <a href="/events/{{id}}">Read more...</a></p>
 
     {{/each}}
