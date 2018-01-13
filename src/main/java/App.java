@@ -16,6 +16,12 @@ public class App {
         staticFileLocation("/public");
 
 
+        get("/events/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            Event.clearAllEvents();
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
         get("/events/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "newevent-form.hbs");
@@ -41,14 +47,6 @@ public class App {
 
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
-
-
-        get("/events/delete", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            Event.clearAllPosts();
-            return new ModelAndView(model, "success.hbs");
-        }, new HandlebarsTemplateEngine());
-
 
         get("/events/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
@@ -86,5 +84,17 @@ public class App {
             deleteEvent.deleteEvent();
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
+
+
+        get("/events/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfEventToFind = Integer.parseInt(req.params("id"));
+            Event foundEvent = Event.findById(idOfEventToFind);
+            model.put("event", foundEvent);
+            return new ModelAndView(model, "event-details.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+
     }
 }

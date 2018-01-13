@@ -6,7 +6,18 @@
     color: white;
     text-align: center;
     }
+.schedule {
+  background-color: black;
+  color: gold;
+  transform:perspective(1000px) rotateX(45deg);
+    }
 
 body {
 
     }
+
+input {
+  border: none;
+  background-color: black;
+  color: gold;
+}

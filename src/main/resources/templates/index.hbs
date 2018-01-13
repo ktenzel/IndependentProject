@@ -1,14 +1,16 @@
 {{#partial "content"}}
-
+<div class="schedule">
 <h1>Event Schedule</h1>
 
 {{#if events}}
     {{#each events}}
     <p>Current Post</p>
 <p><span class="eventTitle">{{ content }}</span> :  {{ description }} <a href="/events/{{id}}">Read more...</a></p>
+
     {{/each}}
 {{else}}
 <p>No scheduled event</p>
+</div>
 {{/if}}
 {{/partial}}
 

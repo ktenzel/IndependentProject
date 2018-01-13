@@ -30,7 +30,7 @@ public class Event {
         return instances;
     }
 
-    public static void clearAllPosts(){
+    public static void clearAllEvents(){
         instances.clear();
     }
     public boolean getPublished(){

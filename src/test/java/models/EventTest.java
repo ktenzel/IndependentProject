@@ -15,7 +15,7 @@ public class EventTest {
 
     @After
     public void tearDown() throws Exception {
-        Event.clearAllPosts();
+        Event.clearAllEvents();
     }
 
     @Test
@@ -64,7 +64,7 @@ public class EventTest {
 
     @Test
     public void getId_numberEachPostStartingWith_1() throws Exception{
-        Event.clearAllPosts();
+        Event.clearAllEvents();
         Event myEvent = setupNewEvent();
         assertEquals(1, myEvent.getId());
     }
@@ -109,7 +109,7 @@ public class EventTest {
         Event event = setupNewEvent();
         Event otherEvent = setupNewEvent();
 
-        Event.clearAllPosts();
+        Event.clearAllEvents();
         assertEquals(0, Event.getAll().size());
     }
 
