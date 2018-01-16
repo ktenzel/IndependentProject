@@ -6,14 +6,13 @@ public class Event {
     private String content;
     private String description;
     private static ArrayList<Event> instances = new ArrayList<>();
-    private boolean published;
+
     private LocalDateTime createdAt;
     private int id;
 
     public Event (String content, String description){
     this.content = content;
     this.description = description;
-    this.published = false;
     this.createdAt = LocalDateTime.now();
     instances.add(this);
     this.id = instances.size();
@@ -33,9 +32,7 @@ public class Event {
     public static void clearAllEvents(){
         instances.clear();
     }
-    public boolean getPublished(){
-        return this.published;
-    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }

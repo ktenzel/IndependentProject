@@ -21,7 +21,7 @@ body {
 input {
   border: gold;
   background-color: gold;
-  color: gold;
+  color: black;
 }
 
 a {
@@ -30,4 +30,8 @@ color: white;
 
 .container {
     text-align: justify;
+}
+
+footer{
+text-align: center;
 }

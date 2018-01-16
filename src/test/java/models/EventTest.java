@@ -51,11 +51,11 @@ public class EventTest {
         assertTrue(Event.getAll().contains(otherEvent));
     }
 
-    @Test
-    public void getPublished_inFalseByDefault_false() throws Exception {
-        Event myEvent = new Event("Welcome", "");
-        assertEquals(false, myEvent.getPublished());
-    }
+//    @Test
+//    public void getPublished_inFalseByDefault_false() throws Exception {
+//        Event myEvent = new Event("Welcome", "");
+//        assertEquals(false, myEvent.getPublished());
+//    }
     @Test
     public void getCreatedAt_stampsCurrentTime() throws Exception {
         Event myEvent = setupNewEvent();

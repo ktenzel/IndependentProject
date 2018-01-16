@@ -7,11 +7,11 @@
 
 {{#if events}}
     {{#each events}}
-<p><span class="eventTitle">{{ content }}</span> :  {{ description }} <a href="/events/{{id}}">Read more...</a></p>
+<p><span class="eventTitle">ADDED EVENT: {{ content }}</span> :  {{ description }} <a href="/events/{{id}}">Read more...</a></p>
 
     {{/each}}
 {{else}}
-<p>No scheduled event</p>
+<p>No scheduled event, Click ADD EVENT to add.</p>
 </div>
 {{/if}}
 {{/partial}}
