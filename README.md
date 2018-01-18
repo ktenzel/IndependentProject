@@ -1,12 +1,13 @@
 # _EVENT HACKATHON_
 
-#### This program will set up pricing for an event planning request
+#### This program will set up the schedule for a star wars hackathon and let users add events to that schedule.
 
 #### By: _**Kyle Tenzeldam**_
 
 
 ## Description
     This program creates an event calendar for an upcoming hackathon.
+
 ## Setup/Installment Requirements
     JAVA
     IntelliJ

@@ -2,25 +2,23 @@
 
 <html lang="en">
 <head>
-    <title>{{#block "title"}}StarWars Hackathon{{/block}}</title>
+    <title>{{#block "title"}}Star Wars Hackathon{{/block}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel='stylesheet' href='/app.css'>
 </head>
 <body>
+<div class="centertext">
     <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
         <li role="presentation"><a href="/">See all events</a></li>
         <li role="presentation"><a href="/events/new">Add event</a></li>
     </ul>
+</div>
     <div class="jumbotron">
-        <h1>Star Wars Hackathon</h1>
+        <h1>Hackathon</h1>
     </div>
     <div class="container">
-        <div class="page-header">
-
-        </div>
         <div class="col-md-12">
             {{#block "content"}}
             {{/block}}
@@ -30,8 +28,12 @@
 {{#block "footer"}}
     <footer class="footer">
         <div class="container">
-            <p><a href="/events/new" id="right">ADD EVENT</a><br>
-            <a href="/events/delete" id="left">DELETE ALL EVENTS</a></p>
+            <div class="centertext">
+                <br>
+            <p><span class="event"><a href="/events/new" id="right">ADD EVENT</a></span>
+                <br><br>
+                <span class="deleteall"><a href="/events/delete" id="left">DELETE ALL EVENTS</a></span></p>
+            </div>
         </div>
     </footer>
 </body>

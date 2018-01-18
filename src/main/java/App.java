@@ -2,9 +2,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
-
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import com.sun.tools.internal.xjc.model.Model;
 import models.Event;
 
 import spark.ModelAndView;

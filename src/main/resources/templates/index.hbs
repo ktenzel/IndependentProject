@@ -2,8 +2,8 @@
 <div class="schedule">
 <h1>Event Schedule</h1>
     <p>Welcome : Opening Remarks and Welcome</p>
-    <p>RPG : Creating and Star Wars Role Playing Game.</p>
-    <p>Text : Creating and Star Wars Text and words based game.</p>
+    <p>RPG : Creating and Star Wars Role Playing Games.</p>
+    <p>Text : Creating and Star Wars Text and Word based games.</p>
 
 {{#if events}}
     {{#each events}}
@@ -11,7 +11,7 @@
 
     {{/each}}
 {{else}}
-<p>No scheduled event, Click ADD EVENT to add.</p>
+    <p>No scheduled event, Click <a href="/events/new" id="right">ADD EVENT</a> to add.</p>
 </div>
 {{/if}}
 {{/partial}}
